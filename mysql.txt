@@ -1,0 +1,26 @@
+mysql -u root -h docker.hackthebox.eu -P 3306 -p	đăng nhập vào cơ sở dữ liệu mysql
+SHOW DATABASES	Liệt kê cơ sở dữ liệu có sẵn
+USE users	Chuyển sang cơ sở dữ liệu
+Những cái bàn	
+CREATE TABLE logins (id INT, ...)	Thêm một bảng mới
+SHOW TABLES	Liệt kê các bảng có sẵn trong cơ sở dữ liệu hiện tại
+DESCRIBE logins	Hiển thị thuộc tính và cột của bảng
+INSERT INTO table_name VALUES (value_1,..)	Thêm giá trị vào bảng
+INSERT INTO table_name(column2, ...) VALUES (column2_value, ..)	Thêm giá trị vào các cột cụ thể trong bảng
+UPDATE table_name SET column1=newvalue1, ... WHERE <condition>	Cập nhật giá trị bảng
+Cột	
+SELECT * FROM table_name	Hiển thị tất cả các cột trong bảng
+SELECT column1, column2 FROM table_name	Hiển thị các cột cụ thể trong bảng
+DROP TABLE logins	Xóa một bảng
+ALTER TABLE logins ADD newColumn INT	Thêm cột mới
+ALTER TABLE logins RENAME COLUMN newColumn TO oldColumn	Đổi tên cột
+ALTER TABLE logins MODIFY oldColumn DATE	Thay đổi kiểu dữ liệu cột
+ALTER TABLE logins DROP oldColumn	Xóa cột
+đầu ra	
+SELECT * FROM logins ORDER BY column_1	Sắp xếp theo cột
+SELECT * FROM logins ORDER BY column_1 DESC	Sắp xếp theo cột theo thứ tự giảm dần
+SELECT * FROM logins ORDER BY column_1 DESC, id ASC	Sắp xếp theo hai cột
+SELECT * FROM logins LIMIT 2	Chỉ hiển thị hai kết quả đầu tiên
+SELECT * FROM logins LIMIT 1, 2	Chỉ hiển thị hai kết quả đầu tiên bắt đầu từ chỉ mục 2
+SELECT * FROM table_name WHERE <condition>	Liệt kê các kết quả đáp ứng một điều kiện
+SELECT * FROM logins WHERE username LIKE 'admin%'	Liệt kê các kết quả có tên giống với một chuỗi nhất định
